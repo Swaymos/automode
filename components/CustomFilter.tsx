@@ -1,12 +1,10 @@
 "use client";
 
-import { Fragment, useState } from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { Fragment, useState } from "react";
+import Image from "next/image";
 
-import { Listbox, Transition } from '@headlessui/react';
-import { CustomFilterProps } from '@/types';
-import { updateSearchParams } from '@/utils';
+import { Listbox, Transition } from "@headlessui/react";
+import { CustomFilterProps } from "@/types";
 
 const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
@@ -23,8 +21,8 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
         <div className="relative w-fit z-10">
           <Listbox.Button className="custom-filter__btn">
             <span className="block truncate">{selected.title}</span>
-            <Image 
-              src="/chevron-up-down.svg" 
+            <Image
+              src="/chevron-up-down.svg"
               width={20}
               height={20}
               className="ml-4 object-contain"
@@ -42,12 +40,18 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
                 <Listbox.Option
                   key={option.title}
                   value={option}
-                  className={({ active }) => `relative cursor-default select-none py-2 px-4 ${
-                    active ? 'bg-primary-blue text-white' : 'text-gray-900'
-                  }`}
+                  className={({ active }) =>
+                    `relative cursor-default select-none py-2 px-4 ${
+                      active ? "bg-primary-blue text-white" : "text-gray-900"
+                    }`
+                  }
                 >
                   {({ selected }) => (
-                    <span className={`block truncate ${selected ? 'font-medium' : 'font-normal'}`}>
+                    <span
+                      className={`block truncate ${
+                        selected ? "font-medium" : "font-normal"
+                      }`}
+                    >
                       {option.title}
                     </span>
                   )}
@@ -58,7 +62,7 @@ const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
         </div>
       </Listbox>
     </div>
-  )
-}
+  );
+};
 
-export default CustomFilter
+export default CustomFilter;

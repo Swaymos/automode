@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,800;1,800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,6 +9,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Manrope", sans-serif;
+}
+
+.hero__title {
+  font-family: "Rubik", sans-serif !important;
+  text-transform: uppercase;
 }
 
 /* START: General styles */
@@ -43,7 +48,7 @@
 }
 
 .hero__title {
-  @apply 2xl:text-[60px] sm:text-[44px] text-[30px] font-extrabold;
+  @apply 2xl:text-[54px] sm:text-[44px] text-[30px] font-extrabold;
 }
 
 .hero__subtitle {
